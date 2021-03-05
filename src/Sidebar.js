@@ -8,6 +8,7 @@ const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
+    <>
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
       <ul className='links'>
         {links.map((link) => {
@@ -23,6 +24,10 @@ const Sidebar = () => {
         })}
       </ul>
     </aside>
+    <div className="main-content">
+
+</div>
+    </>
   );
 };
 
