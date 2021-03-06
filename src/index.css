@@ -5,6 +5,7 @@ Variables
 */
 
 :root {
+  --clr-main-pink : #8D021F;
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
   --clr-primary-2: hsl(205, 77%, 27%);
@@ -389,11 +390,17 @@ margin: 0 2rem;
   width: 100%;
 }
 .other-details{
-  background: blue;
+  /* background: blue; */
+  display: grid;
+  gap: 1rem;
   width: 100%;
+  max-height: 10rem;
 }
 .footer{
-  background: black;
+  background: var(--clr-white);
+  border-radius: 1rem;
+  /* margin: 0 2rem; */
+  margin-right: 1rem;
 }
 @media screen and (min-width: 765px){
   .main-content{
@@ -488,4 +495,103 @@ display: block;
   font-weight: 100;
   margin: auto 0;
   margin-left: 5px;
+}
+
+
+@media screen and (min-width :765px){
+  .other-details{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact-container{
+color: var(--clr-white);
+ background:green;
+ margin-bottom: 1rem;
+ border-radius: 1rem;
+display: grid;
+margin-right: 1rem;
+grid-template-columns: auto auto;
+}
+.calender-container{
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: var(--clr-main-pink);
+}
+.contact-content{
+  margin-left: 1rem;
+ color: var(--clr-white);
+ display: grid;
+ grid-template-rows:  auto auto;
+
+}
+
+.contact{
+/* background: red; */
+display: flex;
+flex-direction: row;
+/* font-size: 1rem; */
+
+
+}
+.contact-1{
+  align-self: end;
+
+  margin-bottom: 0;
+  /* background: yellow; */
+}
+.contact-1{
+  transform: translateY(50%);
+}
+.contact p{
+  
+  color: var(--clr-white) ;
+  margin-top: 0;
+  font-size: .7rem;
+}
+.contact h5{
+  margin-left: .5rem;
+  font-size: .7rem;
+}
+.contact-logo{
+  font-size: .8rem;
+  margin-bottom: 0;
+}
+.contacts-logo{
+  justify-self: center;
+  align-self: center;
+  font-size: 3rem;
+}
+.calender-container{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.contact h4{
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 200;
+}
+.contact h3{
+text-transform: capitalize;
+margin-bottom: 1rem;
+}
+.contact-3{
+  align-self: end;
+}
+.calendar-icon{
+  color: var(--clr-white);
+}
+.footer h6{
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.footer p{
+  margin-left: 1rem;
+}
+.footer a{
+ 
+  margin-top: 0;
 }
