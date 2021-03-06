@@ -22,7 +22,30 @@ const Content = () => {
              </div>
            </div>
            <div className="other-user-details">
-            
+            <div className="simple-detail">
+                <h5>Current session</h5>
+                <p>2020/2021</p>
+            </div>
+            <div className="simple-detail">
+                <h5>term</h5>
+                <p>First</p>
+            </div>
+            <div className="simple-detail">
+                <h5>Gender</h5>
+                <p>Male</p>
+            </div>
+            <div className="simple-detail">
+                <h5>Class Section</h5>
+                <p>Purple</p>
+            </div>
+            <div className="simple-detail">
+                <h5>Admission Type</h5>
+                <p>Border</p>
+            </div>
+            <div className="simple-detail">
+                <h5>Sport House</h5>
+                <p>King</p>
+            </div>
            </div>
        </div>
        <div className="other-details"></div>
