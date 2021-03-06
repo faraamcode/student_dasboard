@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import { useGlobalContext } from './context';
 import { FaTimes } from 'react-icons/fa';
 import { social, links } from './data';
+import Content from './maincontent.jsx'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
-    <>
+    <div className="content">
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
       <ul className='links'>
         {links.map((link) => {
@@ -24,10 +25,8 @@ const Sidebar = () => {
         })}
       </ul>
     </aside>
-    <div className="main-content">
-
-</div>
-    </>
+<Content/>
+    </div>
   );
 };
 
