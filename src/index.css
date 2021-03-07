@@ -595,3 +595,65 @@ margin-bottom: 1rem;
  
   margin-top: 0;
 }
+
+/* 
+==================
+RESULT FORM DESIGN
+==================
+*/
+
+.form-container{
+  background: var(--clr-white);
+  width: 100vw;
+  height: 10rem;
+  margin-top: 5rem;
+  margin-right: 2rem;
+}
+.form-header{
+  border-bottom: 1px solid var(--clr-grey-8);
+}
+.form-header h5{
+  margin: 1rem;
+  text-transform: capitalize;
+  font-weight: 200;
+  font-size: 1rem;
+}
+@media screen and (min-width: 765px){
+  .form-container{
+    width:  calc(100vw - 312px);
+
+  }
+}
+.form{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.form-control{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.form-control label{
+  font-weight: 200;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.form-control select{
+  border: 1px solid green;
+  height: 2rem;
+  margin-top: 1rem;
+}
+.submit-btn{
+  width: 5rem;
+  height: 2rem;
+  align-self: end;
+  margin-left: 2rem;
+  background: green;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 0 5px;
+}
+.btn-icon{
+  margin-right: 5px;
+}

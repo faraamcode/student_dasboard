@@ -4,6 +4,7 @@ import { useGlobalContext } from './context';
 import { FaTimes } from 'react-icons/fa';
 import { social, links } from './data';
 import Content from './maincontent.jsx'
+import ResultForm from './result-form.jsx'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -25,7 +26,8 @@ const Sidebar = () => {
         })}
       </ul>
     </aside>
-<Content/>
+    <ResultForm/>
+{/* <Content/> */}
     </div>
   );
 };
