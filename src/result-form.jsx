@@ -12,11 +12,21 @@ const ResultForm = () =>{
          <form action="" className="form">
             <div className="form-control">
                 <label htmlFor="">Academic session</label>
-                <select name="session" id=""></select>
+                <select name="session" id="">
+                    <option value="">
+                        ----select a session---
+                    </option>
+                </select>
             </div>
             <div className="form-control">
                 <label htmlFor="">Term</label>
-                <select name="session" id=""></select>
+                <select name="session" id="">
+                    <option value="">
+                        ----select a term---
+                    </option>
+                    <option value="">First</option>
+                    <option value="">Second</option>
+                </select>
             </div>
             <button type="submit" class="submit-btn"><FaBook className="btn-icon"/>submit</button>
          </form>

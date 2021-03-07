@@ -5,6 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 import { social, links } from './data';
 import Content from './maincontent.jsx'
 import ResultForm from './result-form.jsx'
+import Bill from './bill.jsx'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -26,7 +27,8 @@ const Sidebar = () => {
         })}
       </ul>
     </aside>
-    <ResultForm/>
+    <Bill/>
+    {/* <ResultForm/> */}
 {/* <Content/> */}
     </div>
   );
