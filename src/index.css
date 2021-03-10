@@ -268,6 +268,7 @@ margin: 0 2rem;
 
 }
 
+
 .logo-container,.search-container,.other-container{
   align-self: end;
 }
@@ -289,6 +290,7 @@ margin: 0 2rem;
   height: 2rem;
   border-radius:var(--radius) ;
   border: 0;
+  padding-left: 2rem;
   background: var(--clr-grey-10);
 }
 .search-btn{
@@ -642,7 +644,10 @@ RESULT FORM DESIGN
   border: 1px solid green;
   height: 2rem;
   margin-top: 1rem;
+  padding: 0 2rem;
+ color: var(--clr-grey-1);
 }
+
 .submit-btn{
   width: 5rem;
   height: 2rem;

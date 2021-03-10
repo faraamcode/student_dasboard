@@ -17,9 +17,9 @@ result()
       <div className="header-wrapper">
 
       <div className="logo-container">
-      <button onClick={openSidebar} className='sidebar-toggle'>
+        <button onClick={openSidebar} className='sidebar-toggle'>
         <FaBars />
-      </button>
+        </button>
         <img src="logo.png" className = ""/>
         <h5>roemichs</h5>
       </div>

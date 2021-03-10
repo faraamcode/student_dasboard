@@ -6,30 +6,51 @@ import { social, links } from './data';
 import Content from './maincontent.jsx'
 import ResultForm from './result-form.jsx'
 import Bill from './bill.jsx'
+import {Link, Route, Switch} from "react-router-dom"
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
     <div className="content">
+      
+
+
+
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
       <ul className='links'>
         {links.map((link) => {
           const { id, url, text, icon } = link;
           return (
+            <Link to={url}>
             <li key={id}>
-              <a href={url}>
+             
                 {icon}
                 {text}
-              </a>
+         
             </li>
+            </Link>
           );
         })}
       </ul>
     </aside>
+    
+
+
+    <Route path="/" exact>
+
+   <Content/>
+     </Route>
+    <Route path="/bill">
     <Bill/>
-    {/* <ResultForm/> */}
-{/* <Content/> */}
+
+    </Route>
+    <Route path="/result" >
+    <ResultForm/>
+
+    </Route>
+
+  
     </div>
   );
 };
