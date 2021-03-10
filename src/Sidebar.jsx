@@ -6,6 +6,7 @@ import { social, links } from './data';
 import Content from './maincontent.jsx'
 import ResultForm from './result-form.jsx'
 import Bill from './bill.jsx'
+import Payment from './payment.jsx'
 import {Link, Route, Switch} from "react-router-dom"
 
 const Sidebar = () => {
@@ -47,6 +48,10 @@ const Sidebar = () => {
     </Route>
     <Route path="/result" >
     <ResultForm/>
+
+    </Route>
+    <Route path="/payment" >
+    <Payment/>
 
     </Route>
 
