@@ -3,9 +3,8 @@ import {useState} from 'react'
 import { FaBars, FaPhoneAlt, FaRegCalendarAlt} from 'react-icons/fa';
 import { FiSettings, FiSearch } from 'react-icons/fi';
 import { GrNotification } from 'react-icons/gr';
-import { useGlobalContext } from './context';
 import {MdEmail, MdContactMail} from 'react-icons/md'
-import {days, months} from './date'
+import {days, months} from '../date'
 const dat = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga veritatis delectus beatae voluptas maxime enim ipsum labore eveniet repudiandae natus ad, tempora quaerat animi ipsa molestiae porro non laudantium adipisci dolorem consequatur aperiam. Exercitationem adipisci, eveniet quibusdam dignissimos consequatur asperiores blanditiis architecto fugit sapiente, cumque velit. Maxime quae culpa nobis quasi ea aliquid! Excepturi deleniti ad similique commodi dolore placeat delectus quisquam odio quaerat, suscipit provident nihil laborum, incidunt doloribus aliquid magni temporibus! Consequuntur iusto assumenda illo vitae harum corrupti natus sint aliquam aut sunt non libero, earum quo, odio optio deserunt aspernatur possimus sed placeat? Repudiandae expedita asperiores similique."
 
 const Content = () => {

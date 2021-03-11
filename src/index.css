@@ -731,11 +731,61 @@ color:  green;
 
 }
 .payment-container img{
-  margin-left: 1rem;
-  
-width: 10rem;
+  margin-left: 1rem;  
+  width: 10rem;
 }
 .payment-btn{
   background: var(--clr-main-pink);
   border: transparent;
 }
+/* 
+==================
+Teacher Dashboard
+==================
+*/
+.teacher-link a{
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  display: grid;
+  /* grid-template-columns: auto; */
+  /* overflow: hidden; */
+}
+/* .teacher-link a{
+  font-size: 1rem !important;
+  /* display: flex; */
+  
+  /* overflow: hidden; 
+*/
+.submenu{
+  height: 0;
+  overflow: hidden;
+  display: block;
+  background: var(--clr-grey-4);
+  color: var(--clr-white);
+  /* padding: .5rem; */
+}
+.show{
+  height: auto;
+}
+.submenu li{
+  margin-left: 1rem;
+  margin-top: .2rem;
+  color: var(--clr-white);
+}
+.arrow{
+  justify-self: end;
+  margin-left: 3rem;
+}
+.submenu li:hover{
+color: var(--clr-black);
+}
+
+/* 
+========
+result teacher
+===============
+ */
+
+ .teacher-result{
+   grid-template-columns: repeat(5, 1fr);
+ }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from './Modal';
-import Sidebar from './Sidebar';
+import StudentSidebar from './student/Sidebar.jsx';
+import TeacherSidebar from './teacher/sidebar.jsx'
+
 import Home from './Home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 function App() {
@@ -9,9 +11,10 @@ function App() {
     <Router>
    
 
-      <Home />
+   <Home />
       <Modal />
-      <Sidebar />
+      {/* <StudentSidebar /> */}
+      <TeacherSidebar/>
 
     </Router>
     </>

@@ -10,6 +10,9 @@ import {
   FaCalendarAlt,
   FaWpforms,
   FaUserTie,
+  FaBook,
+  FaGift,
+  FaIdCard,
 } from 'react-icons/fa';
 import {FiFileText} from 'react-icons/fi'
 import {RiBillFill, RiSecurePaymentLine} from 'react-icons/ri'
@@ -71,5 +74,60 @@ export const social = [
     id: 5,
     url: 'https://www.twitter.com',
     icon: <FaSketch />,
+  },
+];
+
+export const Teacherlinks = [
+  {
+    id: 1,
+    url: '/',
+    text: 'dashoboad',
+    submenu: [],
+    icon: <FaHome />,
+  },
+  {
+    id: 2,
+    url: '/result',
+    text: 'result',
+    submenu: [
+      {url :"/result/student", text : "student"}, {url :"/result/class", text : "Class"}, {url :"/result/subject", text : "Subject"} ], 
+    icon: <FiFileText />,
+  },
+  {
+    id: 3,
+    url: '/markrecord',
+    text: 'Record',
+    submenu: [
+      {url :"/record/midterm", text : "Mid Term"}, {url :"/record/term", text : "Term"}],
+    icon: <FaBook />,
+  },
+  {
+    id: 4,
+    url: '/Psycomotor',
+    text: 'Psycomotor',
+    submenu: [],
+    icon: <RiSecurePaymentLine />,
+  },
+  {
+    id: 5,
+    url: '/Comment',
+    text: 'Comment',
+    submenu: [
+      {url :"/midterm", text : "Mid Term"}, {url :"/term", text : "Term"}, {url :"/session", text : "Session"} ],
+    icon: <FaGift />,
+  },
+  {
+    id: 6,
+    url: '/Affective',
+    text: 'Affective Domain',
+    submenu: [],
+    icon: <RiBillFill />,
+  },
+  {
+    id: 7,
+    url: '/Attendance',
+    text: 'Attendance',
+    submenu: [],
+    icon: < FaIdCard/>,
   },
 ];

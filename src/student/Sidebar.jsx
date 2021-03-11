@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import { useGlobalContext } from './context';
+import logo from '../logo.svg';
+import { useGlobalContext } from '../context.js';
 import { FaTimes } from 'react-icons/fa';
-import { social, links } from './data';
+import { social, links } from '../data';
 import Content from './maincontent.jsx'
 import ResultForm from './result-form.jsx'
 import Bill from './bill.jsx'
@@ -19,7 +19,7 @@ const Sidebar = () => {
 
 
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
-      <ul className='links'>
+      <ul className='links teacher-link'>
         {links.map((link) => {
           const { id, url, text, icon } = link;
           return (
