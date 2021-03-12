@@ -90,7 +90,7 @@ export const Teacherlinks = [
     url: '/result',
     text: 'result',
     submenu: [
-      {url :"/result/student", text : "student"}, {url :"/result/class", text : "Class"}, {url :"/result/subject", text : "Subject"} ], 
+      {url :"/result/student", text : "student"}, {url :"/result/class", text : "Class"}, {url :"/result/subject", text : "Subject"}, {url :"/result/midterm", text : "Mid term"} ], 
     icon: <FiFileText />,
   },
   {
@@ -103,9 +103,9 @@ export const Teacherlinks = [
   },
   {
     id: 4,
-    url: '/Psycomotor',
+    url: '/psycomotor',
     text: 'Psycomotor',
-    submenu: [],
+    submenu : [],
     icon: <RiSecurePaymentLine />,
   },
   {
@@ -113,19 +113,19 @@ export const Teacherlinks = [
     url: '/Comment',
     text: 'Comment',
     submenu: [
-      {url :"/midterm", text : "Mid Term"}, {url :"/term", text : "Term"}, {url :"/session", text : "Session"} ],
+      {url :"/comment/midterm", text : "Mid Term"}, {url :"/comment/term", text : "Term"} ],
     icon: <FaGift />,
   },
   {
     id: 6,
-    url: '/Affective',
+    url: '/affective',
     text: 'Affective Domain',
     submenu: [],
     icon: <RiBillFill />,
   },
   {
     id: 7,
-    url: '/Attendance',
+    url: '/attendance',
     text: 'Attendance',
     submenu: [],
     icon: < FaIdCard/>,
