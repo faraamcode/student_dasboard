@@ -15,7 +15,9 @@ import Attendance from './Attendance';
 import Midtermrecord from './Midtermrecord';
 import Termrecord from './termrecord';
 import Termcomment from './termcomment'
-import Midtermcomment from './midtermcomment'
+import Midtermcomment from './midtermcomment';
+import UpdateMidtermRecord from './updatemidtermrecord'
+import UpdatetermRecord from './updatetermrecord'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -108,7 +110,13 @@ const Sidebar = () => {
     <Midtermcomment/>
 
     </Route>
+<Route path="/record/update/midterm">
+ <UpdateMidtermRecord/>
 
+ </Route>
+ <Route path="/record/update/term">
+ <UpdatetermRecord/>
+ </Route>
   
     </div>
   );

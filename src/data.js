@@ -103,13 +103,21 @@ export const Teacherlinks = [
   },
   {
     id: 4,
+    url: '/updatekrecord',
+    text: 'Update Record',
+    submenu: [
+      {url :"/record/update/midterm", text : "Mid Term"}, {url :"/record/update/term", text : "Term"}],
+    icon: <FaBook />,
+  },
+  {
+    id: 5,
     url: '/psycomotor',
     text: 'Psycomotor',
     submenu : [],
     icon: <RiSecurePaymentLine />,
   },
   {
-    id: 5,
+    id: 6,
     url: '/Comment',
     text: 'Comment',
     submenu: [
@@ -117,14 +125,14 @@ export const Teacherlinks = [
     icon: <FaGift />,
   },
   {
-    id: 6,
+    id: 7,
     url: '/affective',
     text: 'Affective Domain',
     submenu: [],
     icon: <RiBillFill />,
   },
   {
-    id: 7,
+    id: 8,
     url: '/attendance',
     text: 'Attendance',
     submenu: [],
