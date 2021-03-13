@@ -1,0 +1,19 @@
+12/03/2021
+
+teacher dashboard
+- add update of term and midterm result
+change password
+admin dashboard
+- duplicate teacher dashboard
+and other features
+class(create, update, delete and read)
+subjects (create, update, delete and read)
+subjectcombination(crud)
+read result
+update result
+school schedule
+student 
+staff creation
+
+view (edit and delete)
+create
