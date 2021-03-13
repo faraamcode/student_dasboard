@@ -14,7 +14,9 @@ import {
   FaGift,
   FaIdCard,
 } from 'react-icons/fa';
-import {FiFileText} from 'react-icons/fi'
+import {GiCombinationLock} from 'react-icons/gi'
+import {MdSubject} from 'react-icons/md'
+import {FiFileText, FiEdit2} from 'react-icons/fi'
 import {RiBillFill, RiSecurePaymentLine} from 'react-icons/ri'
 export const links = [
   {
@@ -107,7 +109,7 @@ export const Teacherlinks = [
     text: 'Update Record',
     submenu: [
       {url :"/record/update/midterm", text : "Mid Term"}, {url :"/record/update/term", text : "Term"}],
-    icon: <FaBook />,
+    icon: <FiEdit2 />,
   },
   {
     id: 5,
@@ -154,7 +156,7 @@ export const Adminlinks = [
       text: 'Student',
       submenu: [
         {url :"/student/create", text : "Create"}, {url :"/student/view", text : "View"} ],
-      icon: <FaGift />,
+      icon: <FaUserTie />,
     },
   {
     id: 10,
@@ -162,7 +164,7 @@ export const Adminlinks = [
     text: 'Subject',
     submenu: [
       {url :"/subject/create", text : "Create"}, {url :"/subject/view", text : "View"} ],
-    icon: <FaGift />,
+    icon: <MdSubject />,
   },
   {
     id: 11,
@@ -170,7 +172,7 @@ export const Adminlinks = [
     text: 'Subject Combination',
     submenu: [
       {url :"/subjectcombination/create", text : "Create"}, {url :"/subjectcombination/view", text : "View"} ],
-    icon: <FaGift />,
+    icon: <GiCombinationLock />,
   },
   {
     id: 12,
@@ -178,7 +180,7 @@ export const Adminlinks = [
     text: 'Staff',
     submenu: [
       {url :"/staff/create", text : "Create"}, {url :"/staff/view", text : "View"} ],
-    icon: <FaGift />,
+    icon: <FaUserTie />,
   },
   {
     id: 13,
@@ -186,13 +188,6 @@ export const Adminlinks = [
     text: 'spreadsheet',
     submenu: [],
     icon: <FaGift />,
-  },
-  {
-    id: 1,
-    url: '/',
-    text: 'dashoboad',
-    submenu: [],
-    icon: <FaHome />,
   },
   {
     id: 2,
@@ -216,7 +211,7 @@ export const Adminlinks = [
     text: 'Update Record',
     submenu: [
       {url :"/record/update/midterm", text : "Mid Term"}, {url :"/record/update/term", text : "Term"}],
-    icon: <FaBook />,
+    icon: <FiEdit2 />,
   },
   {
     id: 5,
