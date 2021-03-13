@@ -19,7 +19,7 @@ const Sidebar = () => {
 
 
     <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
-      <ul className='links teacher-link'>
+      <ul className='links'>
         {links.map((link) => {
           const { id, url, text, icon } = link;
           return (
@@ -54,6 +54,7 @@ const Sidebar = () => {
     <Payment/>
 
     </Route>
+
 
   
     </div>
