@@ -14,6 +14,67 @@ update result
 school schedule
 student 
 staff creation
+spreadsheet termly and session
+progress
 
 view (edit and delete)
 create
+
+
+
+13/03/2021
+
+Admin dasboard sub route for submenu 
+finish the video on authentication
+class creation and read api On Admin will be created
+
+
+17/03/2021
+
+check the sidebar
+submenus
+class route
+
+
+
+
+import React, {useState} from 'react';
+import './App.css';
+
+const navigations = [
+  {title: "Home", subNavs: ["link1", "link2", "link3", "link4"]},
+  {title: "About", subNavs: ["link1", "link2", "link3", "link4"]},
+  {title: "Services", subNavs: ["link1", "link2", "link3", "link4"]},
+  {title: "Contact", subNavs: ["link1", "link2", "link3", "link4"]}
+  ]
+
+
+const NavigationItem = ({item, activeNav, handleToggle}) => {
+  return (
+    <div className="nav-item">
+      <h5 onClick={() => handleToggle(item.title)}>{item.title}</h5>
+        <div className={`subnav ${activeNav === item.title ? "active" : ""}` }>
+        {item.subNavs?.map((subItem) => <a href="">{subItem}</a>)}
+        </div>
+    </div>
+  )
+}
+function App() {
+const [activeNav, setActiveNav] = useState("");
+const handleToggle =  (title) => {
+  if(title){
+    setActiveNav(previousState => previousState === title ? "" : title)
+  }
+}
+  
+  return (
+    <aside>
+      <div>
+        {navigations?.map((nav, index) => <NavigationItem key={index} item={nav} activeNav={activeNav} handleToggle={handleToggle}/>)}
+      </div>
+      hello
+    </aside>
+  );
+}
+
+export default App;

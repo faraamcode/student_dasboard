@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect, useState} from 'react';
 import logo from '../logo.svg';
 import { useGlobalContext } from '../context.js';
 import { FaTimes } from 'react-icons/fa';
@@ -18,17 +19,23 @@ import Termcomment from './termcomment'
 import Midtermcomment from './midtermcomment';
 import UpdateMidtermRecord from './updatemidtermrecord'
 import UpdatetermRecord from './updatetermrecord'
+import {AdminContext} from '../context/context'
+
 
 const Sidebar = () => {
+  const [openSubmenu, setOpenSubmenu] = useState("")
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
-
+  const submenufunction = (menu)=>{
+     setOpenSubmenu(previousState => previousState === menu ? " " : menu)
+    
+  }
   return (
     <div className="content">
       
 
 
 
-    <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+    <aside className={`${isSidebarOpen ? 'sidebar admin-sidebar show-sidebar' : 'sidebar admin-sidebar'}`}>
       <ul className='links teacher-link'>
         {Adminlinks.map((link) => {
           const { id, url, text, icon, submenu } = link;
@@ -46,14 +53,14 @@ const Sidebar = () => {
           }
           return (
             <Link >
-            <li key={id} >
+            <li key={id} onClick={()=> submenufunction(text)} >
              
                 {icon}
                 {text}
                 
             </li>
             <div>
-             <ul className="submenu"> 
+             <ul className={`${openSubmenu === text ? "submenu show": "submenu"}`}> 
                  {submenu.map((item, index)=> {
                      return <Link to={item.url}><li>{item.text}</li></Link>
                     })}

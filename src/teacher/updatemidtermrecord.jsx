@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaBook} from 'react-icons/fa'
 
-const Midtermrecord = () =>{
+const Updatemidtermrecord = () =>{
 
  return(
      <div className="form-container">
@@ -66,4 +66,4 @@ const Midtermrecord = () =>{
 
 }
 
-export default Midtermrecord
+export default Updatemidtermrecord

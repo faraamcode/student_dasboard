@@ -14,10 +14,13 @@ import {
   FaGift,
   FaIdCard,
 } from 'react-icons/fa';
+import {SiGoogleclassroom} from 'react-icons/si'
 import {GiCombinationLock} from 'react-icons/gi'
 import {MdSubject} from 'react-icons/md'
 import {FiFileText, FiEdit2} from 'react-icons/fi'
 import {RiBillFill, RiSecurePaymentLine} from 'react-icons/ri'
+import {submenufunction, SidebarContext} from './context/sideBarcontext'
+const {openClassfunction} = React.createContext(SidebarContext)
 export const links = [
   {
     id: 1,
@@ -142,15 +145,16 @@ export const Teacherlinks = [
   },
 ];
 export const Adminlinks = [
-  {
+  { menu :openClassfunction,
     id: 9,
     url: '/Class',
     text: 'Class',
     submenu: [
       {url :"/class/create", text : "Create"}, {url :"/class/view", text : "View"} ],
-      icon: <FaGift />,
+      icon: <SiGoogleclassroom />,
     },
     {
+      menu :openClassfunction,
       id: 15,
       url: '/Student',
       text: 'Student',
@@ -159,6 +163,7 @@ export const Adminlinks = [
       icon: <FaUserTie />,
     },
   {
+    menu :openClassfunction,
     id: 10,
     url: '/Subject',
     text: 'Subject',
@@ -167,6 +172,7 @@ export const Adminlinks = [
     icon: <MdSubject />,
   },
   {
+    menu :openClassfunction,
     id: 11,
     url: '/subjectcombination',
     text: 'Subject Combination',
@@ -175,6 +181,7 @@ export const Adminlinks = [
     icon: <GiCombinationLock />,
   },
   {
+    menu :openClassfunction,
     id: 12,
     url: '/staff',
     text: 'Staff',
@@ -183,6 +190,7 @@ export const Adminlinks = [
     icon: <FaUserTie />,
   },
   {
+    
     id: 13,
     url: '/progress',
     text: 'spreadsheet',
@@ -190,6 +198,7 @@ export const Adminlinks = [
     icon: <FaGift />,
   },
   {
+    menu :openClassfunction,
     id: 2,
     url: '/result',
     text: 'result',
@@ -198,6 +207,15 @@ export const Adminlinks = [
     icon: <FiFileText />,
   },
   {
+ 
+    id: 14,
+    url: '/progress',
+    text: 'Progress',
+    submenu: [],
+      icon: <FaGift />,
+    },
+  {
+    menu :openClassfunction,
     id: 3,
     url: '/markrecord',
     text: 'Record',
@@ -206,6 +224,7 @@ export const Adminlinks = [
     icon: <FaBook />,
   },
   {
+    menu : openClassfunction,
     id: 4,
     url: '/updatekrecord',
     text: 'Update Record',
@@ -214,6 +233,7 @@ export const Adminlinks = [
     icon: <FiEdit2 />,
   },
   {
+ 
     id: 5,
     url: '/psycomotor',
     text: 'Psycomotor',
@@ -221,6 +241,7 @@ export const Adminlinks = [
     icon: <RiSecurePaymentLine />,
   },
   {
+    menu :openClassfunction,
     id: 6,
     url: '/Comment',
     text: 'Comment',
@@ -229,6 +250,7 @@ export const Adminlinks = [
     icon: <FaGift />,
   },
   {
+
     id: 7,
     url: '/affective',
     text: 'Affective Domain',
@@ -236,6 +258,7 @@ export const Adminlinks = [
     icon: <RiBillFill />,
   },
   {
+
     id: 8,
     url: '/attendance',
     text: 'Attendance',

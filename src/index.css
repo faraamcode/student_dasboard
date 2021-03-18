@@ -789,3 +789,7 @@ result teacher
  .teacher-result{
    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
  }
+ .admin-sidebar{
+   height: auto;
+   width: 17rem;
+ }
