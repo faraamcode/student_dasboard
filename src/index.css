@@ -321,8 +321,8 @@ margin: 0 2rem;
 }
 
 .links a:hover {
-  background: var(--clr-grey-10);
-  color: var(--clr-grey-2);
+  /* background: var(--clr-grey-10); */
+  /* color: var(--clr-grey-2); */
 }
 .links a svg {
   font-size: 1.5rem;
@@ -331,7 +331,7 @@ margin: 0 2rem;
   transition: var(--transition);
 }
 .links a:hover svg {
-  color: var(--clr-grey-4);
+  /* color: var(--clr-grey-4); */
 }
 .social-icons {
   justify-self: center;
@@ -760,10 +760,11 @@ Teacher Dashboard
   height: 0;
   overflow: hidden;
   display: block;
-  background: var(--clr-grey-4);
+  background: var(--clr-grey-1);
   color: var(--clr-white);
   /* padding: .5rem; */
 }
+
 .show{
   height: auto;
 }
@@ -776,8 +777,9 @@ Teacher Dashboard
   justify-self: end;
   margin-left: 3rem;
 }
-.submenu li:hover{
+.submenu :hover{
 color: var(--clr-black);
+background: var(--clr-grey-7);
 }
 
 /* 
@@ -793,3 +795,14 @@ result teacher
    height: auto;
    width: 17rem;
  }
+.text-input{
+  height: 2rem;
+  padding-left: 1rem;
+}
+.message{
+  text-align: center;
+  background: green;
+  width: auto;
+  max-width: 6rem;
+  margin: 0 auto;
+}

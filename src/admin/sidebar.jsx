@@ -19,6 +19,8 @@ import Termcomment from './termcomment'
 import Midtermcomment from './midtermcomment';
 import UpdateMidtermRecord from './updatemidtermrecord'
 import UpdatetermRecord from './updatetermrecord'
+import CreateClass from './createclass'
+import ReadClass from './readClass'
 import {AdminContext} from '../context/context'
 
 
@@ -74,6 +76,12 @@ const Sidebar = () => {
     
 
 
+<Route path="/class/create" exact>
+<CreateClass/>
+  </Route>
+<Route path="/class/view" exact>
+<ReadClass/>
+  </Route>
 <Route path="/result/student" exact>
 <Result/>
   </Route>
