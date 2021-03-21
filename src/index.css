@@ -798,6 +798,7 @@ result teacher
 .text-input{
   height: 2rem;
   padding-left: 1rem;
+
 }
 .message{
   text-align: center;
@@ -805,4 +806,7 @@ result teacher
   width: auto;
   max-width: 6rem;
   margin: 0 auto;
+}
+.form-control label{
+ margin-bottom: 0;
 }
