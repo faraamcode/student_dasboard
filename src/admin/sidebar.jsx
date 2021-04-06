@@ -22,6 +22,7 @@ import UpdatetermRecord from './updatetermrecord'
 import CreateClass from './createclass'
 import ReadClass from './readClass'
 import {AdminContext} from '../context/context'
+import CreateStudent from './createStudent.jsx'
 
 
 const Sidebar = () => {
@@ -81,6 +82,9 @@ const Sidebar = () => {
   </Route>
 <Route path="/class/view" exact>
 <ReadClass/>
+  </Route>
+<Route path="/student/create" exact>
+<CreateStudent/>
   </Route>
 <Route path="/result/student" exact>
 <Result/>

@@ -7,8 +7,8 @@ let data;
 //     data = result;
 // }
 
-const AdminContext = React.createContext()
-const AdminProvider = ({children}) =>{
+const ClassContext = React.createContext()
+const ClassProvider = ({children}) =>{
     const[classroom, setClassroom] = useState([])
     useEffect(()=>{
         fetch("http://localhost:3000/subject")
@@ -19,9 +19,9 @@ const AdminProvider = ({children}) =>{
     
 
 
-   return (<AdminContext.Provider value ={{classroom}
+   return (<ClassContext.Provider value ={{classroom}
     }>
         {children}
-    </AdminContext.Provider>)
+    </ClassContext.Provider>)
 }
-export {AdminContext, AdminProvider}
+export {ClassContext, ClassProvider}
