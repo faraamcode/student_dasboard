@@ -50,7 +50,7 @@ const Sidebar = () => {
             <div>
              <ul className={`${openSubmenu === text ? "submenu show": "submenu"}`}> 
                  {submenu.map((item, index)=> {
-                   return <Link to={item.url}><li>{item.text}</li></Link>
+                   return <Link to={item.url} ><li>{item.text}</li></Link>
                   })}
              </ul>
              </div>
