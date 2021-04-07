@@ -4,35 +4,20 @@ import logo from '../logo.svg';
 import { useGlobalContext } from '../context.js';
 import { FaTimes } from 'react-icons/fa';
 import {IoIosArrowDown} from 'react-icons/io'
-import Result from './result'
-import Subjectresult from './resultsubject'
-import Classresult from './resultclass.jsx'
-import MidtermResult from './Midtermresult'
 import { social, Adminlinks } from '../data';
 import {Link, Route, Switch} from "react-router-dom"
-import Psycomotor from './psycomotor';
-import Affective from './affective';
-import Attendance from './Attendance';
-import Midtermrecord from './Midtermrecord';
-import Termrecord from './termrecord';
-import Termcomment from './termcomment'
-import Midtermcomment from './midtermcomment';
-import UpdateMidtermRecord from './updatemidtermrecord'
-import UpdatetermRecord from './updatetermrecord'
-import CreateClass from './createclass'
-import ReadClass from './readClass'
 import {AdminContext} from '../context/context'
-import CreateStudent from './createStudent.jsx'
-
+import {MenuProvider, UseMenuContext} from './context/menuContext'
+import {ClassProvider} from './context/classContext'
+import {Result, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
 
 const Sidebar = () => {
-  const [openSubmenu, setOpenSubmenu] = useState("")
+  const  {submenufunction, openSubmenu} = UseMenuContext();
+  
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
-  const submenufunction = (menu)=>{
-     setOpenSubmenu(previousState => previousState === menu ? " " : menu)
-    
-  }
   return (
+<ClassProvider>
+
     <div className="content">
       
 
@@ -44,7 +29,7 @@ const Sidebar = () => {
           const { id, url, text, icon, submenu } = link;
           if(submenu.length == 0){
             return (
-                <Link to={url} >
+              <Link to={url} >
                 <li key={id} >
                  
                     {icon}
@@ -53,9 +38,9 @@ const Sidebar = () => {
                 </li>
                 </Link>
               );
-          }
-          return (
-            <Link >
+            }
+            return (
+              <Link >
             <li key={id} onClick={()=> submenufunction(text)} >
              
                 {icon}
@@ -65,8 +50,8 @@ const Sidebar = () => {
             <div>
              <ul className={`${openSubmenu === text ? "submenu show": "submenu"}`}> 
                  {submenu.map((item, index)=> {
-                     return <Link to={item.url}><li>{item.text}</li></Link>
-                    })}
+                   return <Link to={item.url}><li>{item.text}</li></Link>
+                  })}
              </ul>
              </div>
             </Link>
@@ -123,8 +108,9 @@ const Sidebar = () => {
  </Route>
  <Route path="/comment/term" >
     <Termcomment/>
-
     </Route>
+
+
     <Route path="/comment/midterm" >
     <Midtermcomment/>
 
@@ -138,6 +124,8 @@ const Sidebar = () => {
  </Route>
   
     </div>
+        </ClassProvider>
+
   );
 };
 

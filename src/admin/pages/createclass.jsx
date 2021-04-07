@@ -1,28 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {FaBook} from 'react-icons/fa'
-
+import {UseMenuContext} from '../context/menuContext'
+import {UseClassContext} from '../context/classContext'
 const geturl = "http://localhost:3000/class"
 const CreateClass = () =>{
-const [message, setMessage]= useState("")
-const [classname, setClassname] = useState("")
-const handleSubmit = (e)=>{
-    e.preventDefault()
-    const data = {
-        "class_name":classname
-    }
-    fetch(geturl,{
-        method: "post",
-        body: JSON.stringify(data),
-        headers :{
-            "content-type": "application/json"
-        }
-
-    })
-    .then(result => result.json())
-    .then( resp => setMessage(resp.message))
-    .catch(err => console.log(err))
-   
-}
+    const menuValue = UseMenuContext()
+   const { message, handleSubmit, classname, setClassname} = UseClassContext()
  return(
      <div className="form-container">
         <div className="form-header">
