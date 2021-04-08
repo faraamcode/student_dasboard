@@ -1,47 +1,23 @@
-import React, {useState, useEffect} from 'react'
-import {FaBook} from 'react-icons/fa'
-import {UseClassContext} from '../context/classContext'
+import React from 'react'
 import {UseStudentContext} from '../context/studentContext'
+import {UseClassContext} from '../context/classContext'
+// import {createStudentForm} from '../components/createStudent.jsx'÷
 import {useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-const schema = yup.object().shape({
-    surname: yup.string().required(),
-    othernames: yup.string().required(),
-    admission: yup.string().required(),
-    // session: yup.string().required(),
-    class_nam: yup.string().required(),
-    parent_no: yup.string().required(),
-    address: yup.string().required(),
-    admission_type: yup.string().required(),
-    gender: yup.string().required(),
-    dob: yup.string().required(),
-    parent_name: yup.string().required(),
-    parent_email: yup.string().required().email(),
-    parent_occup: yup.string().required(),
-    class_section: yup.string().required(),
-  })
-
-const CreateStudent = () =>{
-    const {createStudent, message} = UseStudentContext()
+const createStudentForm = ()=>{
+        const {createStudent, message} = UseStudentContext()
   const {classDetails} = UseClassContext()
     const { register, handleSubmit, watch, formState: { errors } } = useForm({resolver: yupResolver(schema)});
     const onSubmit = (data) => {
      createStudent(data);
-    } 
- return(
-
-     <div className="student-container">
-        <div className="form-header">
-         <h5> Create Student</h5>
-        </div>
-       <div className="message">{message}</div>
-        <div className="main-form">
-         <form onSubmit={handleSubmit(onSubmit)} className="form student-form" >
+    }
+    return (
+                 <form onSubmit={handleSubmit(onSubmit)} className="form student-form" >
             <div className="form-control">
                 <label htmlFor="">Surname</label>
-                 <input className= "text-input" type="text"  {...register("surname", {required : true})} id=""/>
+                 <input className= "text-input" type="text" {...register("surname", {required : true})} id=""/>
                  {errors.surname ?.message}
             </div>
             <div className="form-control">
@@ -148,11 +124,7 @@ const CreateStudent = () =>{
             
             <input type="submit" class="submit-btn" value="submit"  />
          </form>
-         
-        </div>
-     </div>
- )
-
+    )
 }
 
-export default CreateStudent
+export default createStudentForm

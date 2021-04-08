@@ -42,6 +42,10 @@ useEffect(()=>{
 
   fetchClass() 
 }, [message])
+useEffect(()=>{
+
+  fetchClass() 
+}, [])
 
 const handleUpdate = (e)=>{
 e.preventDefault()

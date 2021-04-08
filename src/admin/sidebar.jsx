@@ -9,7 +9,8 @@ import {Link, Route, Switch} from "react-router-dom"
 import {AdminContext} from '../context/context'
 import {MenuProvider, UseMenuContext} from './context/menuContext'
 import {ClassProvider} from './context/classContext'
-import {Result, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
+import {StudentProvider} from './context/studentContext'
+import {Result, ReadStudent, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
 
 const Sidebar = () => {
   const  {submenufunction, openSubmenu} = UseMenuContext();
@@ -17,6 +18,7 @@ const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
 <ClassProvider>
+<StudentProvider>
 
     <div className="content">
       
@@ -70,7 +72,10 @@ const Sidebar = () => {
   </Route>
 <Route path="/student/create" exact>
 <CreateStudent/>
-  </Route>
+</Route>
+<Route path="/student/view" exact>
+<ReadStudent/>
+</Route>
 <Route path="/result/student" exact>
 <Result/>
   </Route>
@@ -124,7 +129,8 @@ const Sidebar = () => {
  </Route>
   
     </div>
-        </ClassProvider>
+</StudentProvider>
+</ClassProvider>
 
   );
 };
