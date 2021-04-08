@@ -15,4 +15,6 @@ import CreateClass from './createclass'
 import ReadClass from './readClass'
 import CreateStudent from './createStudent.jsx'
 import ReadStudent from './readStudent.jsx'
-export {Result, Subjectresult,ReadStudent, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent}
+import CreateSubject from './createsubject.jsx'
+import ReadSubject from './readSubject.jsx'
+export {Result, Subjectresult,ReadStudent, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent, CreateSubject, ReadSubject}

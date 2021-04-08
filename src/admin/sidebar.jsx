@@ -10,7 +10,8 @@ import {AdminContext} from '../context/context'
 import {MenuProvider, UseMenuContext} from './context/menuContext'
 import {ClassProvider} from './context/classContext'
 import {StudentProvider} from './context/studentContext'
-import {Result, ReadStudent, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
+import {SubjectProvider} from './context/subjectContext'
+import {Result,ReadSubject, ReadStudent, CreateSubject, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
 
 const Sidebar = () => {
   const  {submenufunction, openSubmenu} = UseMenuContext();
@@ -19,6 +20,7 @@ const Sidebar = () => {
   return (
 <ClassProvider>
 <StudentProvider>
+<SubjectProvider>
 
     <div className="content">
       
@@ -67,18 +69,30 @@ const Sidebar = () => {
 <Route path="/class/create" exact>
 <CreateClass/>
   </Route>
+
 <Route path="/class/view" exact>
 <ReadClass/>
   </Route>
+
 <Route path="/student/create" exact>
 <CreateStudent/>
 </Route>
+
 <Route path="/student/view" exact>
 <ReadStudent/>
 </Route>
+
+<Route path="/subject/create" exact>
+<CreateSubject/>
+</Route>
+
+<Route path="/subject/view" exact>
+<ReadSubject/>
+</Route>
+
 <Route path="/result/student" exact>
 <Result/>
-  </Route>
+</Route>
  <Route path="/result/class">
  <Classresult/>
 
@@ -129,6 +143,7 @@ const Sidebar = () => {
  </Route>
   
     </div>
+</SubjectProvider>
 </StudentProvider>
 </ClassProvider>
 
