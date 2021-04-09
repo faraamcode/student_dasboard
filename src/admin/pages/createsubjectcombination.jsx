@@ -19,7 +19,7 @@ const CreateSubjectcombination = () =>{
          <form action="" className="form teacher-result" onSubmit={handleSubmit}>
             <div className="form-control">
                 <label htmlFor="">Class name</label>
-                <select  id="" className="text-input" onChange={(e)=> {setClassid(e.target.value)}}>
+                <select  id="" className="text-input" onChange={(e)=> {setClassid(e.target.value)}} required>
                     <option value="">
                         ----select a class---
                     </option>
@@ -36,7 +36,7 @@ const CreateSubjectcombination = () =>{
             </div>
             <div className="form-control">
                 <label htmlFor="">Subject name</label>
-                <select  id="" className="text-input" onChange={(e)=> {setSubjectid(e.target.value)}}>
+                <select  id="" className="text-input" onChange={(e)=> {setSubjectid(e.target.value)}} required>
                     <option value="">
                         ----select a subject---
                     </option>

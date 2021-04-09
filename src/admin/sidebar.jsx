@@ -12,7 +12,7 @@ import {ClassProvider} from './context/classContext'
 import {StudentProvider} from './context/studentContext'
 import {SubjectProvider} from './context/subjectContext'
 import {SubjectcombinationProvider} from './context/subjectcombinationContext'
-import {Result,ReadSubject, ReadStudent, CreateSubjectcombination, CreateSubject, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
+import {Result,ReadSubject, ReadSubjectcombination, ReadStudent, CreateSubjectcombination, CreateSubject, Subjectresult, Classresult, Termcomment, MidtermResult, Psycomotor, Affective, Attendance, Midtermrecord, Termrecord, Midtermcomment, UpdateMidtermRecord, UpdatetermRecord,CreateClass, ReadClass, CreateStudent} from './pages/'
 
 const Sidebar = () => {
   const  {submenufunction, openSubmenu} = UseMenuContext();
@@ -94,10 +94,12 @@ const Sidebar = () => {
 <Route path="/subjectcombination/create" exact>
 <CreateSubjectcombination/>
 </Route>
-
-<Route path="/subject/view" exact>
-<ReadSubject/>
+<Route path="/subjectcombination/view" exact>
+<ReadSubjectcombination/>
 </Route>
+
+
+{/* here we are */}
 
 <Route path="/result/student" exact>
 <Result/>

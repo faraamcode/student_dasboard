@@ -7,6 +7,7 @@ const SubjectcombinationProvider = ({children})=>{
     const [message, setMessage]= useState("")
     const [subjectid, setSubjectid] = useState("")
     const [classid, setClassid] = useState("")
+    const [subjectcombinationDetails, setSubjectcombinationDetails] = useState([])
 
 const handleSubmit = (e)=>{
     e.preventDefault()
@@ -34,20 +35,20 @@ const [isEdit, setIsEdit] =useState(false)
 const [edit, setEdit] = useState({id: "www", value: "wwws"})
 // const [message, setMessage]= useState("")
 const [subjectDetails, setSubjectDetails] = useState([])
-const fetchSubject = ()=>{
+const fetchSubjectcombination = ()=>{
     fetch(geturl)
     .then(result => result.json())
-    .then( resp => setSubjectDetails(resp))
+    .then( resp => setSubjectcombinationDetails(resp))
     .catch(err => console.log(err))
 }
 
 useEffect(()=>{
 
-  fetchSubject() 
+  fetchSubjectcombination() 
 }, [message])
 useEffect(()=>{
 
-  fetchSubject() 
+  fetchSubjectcombination() 
 }, [])
 
 const handleUpdate = (e)=>{
@@ -68,7 +69,7 @@ fetch(`${geturl}/${edit.id}`, {
     setMessage(result.message)
     setIsEdit(false)
     setEdit({id: "", value: ""})
-    fetchSubject()
+    fetchSubjectcombination()
 })
 
 }
@@ -79,12 +80,15 @@ setEdit({id,value});
 
 }
 
-const handleDelete = (id)=>{
+const handleDelete = (class_id, subject_id)=>{
+
     // e.preventDefault();
-   fetch(`${geturl}/delete/${id}`,
+   fetch(`${geturl}/delete/byboth`,
    {
     method: "post",
     body: JSON.stringify({
+        class_id,
+        subject_id,
         authorization : token
     }),
     headers :{
@@ -95,14 +99,14 @@ const handleDelete = (id)=>{
    .then(resp => resp.json())
    .then(data => {
        setMessage(data.message)
-        fetchSubject()
+        fetchSubjectcombination()
     })
    .catch(err => console.log(err))
 
 }
 
 
-    return <SubjectcombinationContext.Provider value ={{ message, isEdit, handleDelete, handleUpdate, edit, setEdit, subjectid, classid,  handleEdit, message, handleSubmit,  setSubjectid, setClassid}}>{children}</SubjectcombinationContext.Provider>
+    return <SubjectcombinationContext.Provider value ={{ message, isEdit, handleDelete, handleUpdate, edit, setEdit, subjectid, classid,  handleEdit, message, handleSubmit,  setSubjectid, setClassid, subjectcombinationDetails}}>{children}</SubjectcombinationContext.Provider>
 }
 
 
