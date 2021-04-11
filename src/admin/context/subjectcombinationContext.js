@@ -98,7 +98,7 @@ const handleDelete = (class_id, subject_id)=>{
     )
    .then(resp => resp.json())
    .then(data => {
-       setMessage(data.message)
+        setMessage(data.message)
         fetchSubjectcombination()
     })
    .catch(err => console.log(err))
