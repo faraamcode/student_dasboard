@@ -1,20 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {FaBook} from 'react-icons/fa'
-import {UseStudentContext} from '../context/studentContext'
-import {UseClassContext} from '../context/classContext'
+import {UseStaffContext} from '../context/staffContext'
 
 const ReadStaff = () =>{
-const { message, studentDetails, deleteStudent} = UseStudentContext()
-const { classDetails} = UseClassContext()
-const findClass = (id)=>{
-    const class_main = id.toString()
-   const class_nam = classDetails.filter((mine) => mine.id === class_main)
-   if (class_nam.length < 1) {
-       return "nil"
-   }
-   return class_nam[0].class_name
-//    return class_nam
-}
+const { message, staffDetails, deleteStaff} = UseStaffContext()
+
+
  return(
     
  <div className="edit-container ">
@@ -37,23 +28,28 @@ const findClass = (id)=>{
                   <tr>
 
                   <th>S/N</th>
-                  <th>Student Name</th>
-                  <th>Class Name</th>
+                  <th>Staff Name</th>
+                  <th>Title</th>
+                  <th>Role</th>
+                  <th>Class</th>
+                  <th>Subject</th>
                   <th>Edit</th>
                   <th>Delete</th>
                   </tr>
               </thead>
               <tbody>
-                  {studentDetails.map((item)=>
-                    
-                      
+                  {staffDetails.map((item)=>
                       <tr>
                       <td>{item.id}</td>
-                      <td>{item.last_name, item.other_names}</td>
+                      <td>{item.first_name, item.other_name}</td>
+                      <td>{item.title}</td>
+                      <td>{item.role}</td>
                       <td>{item.class_id}</td>
+                      <td>{item.subject_id}</td>
                       <td><button type="button" className="btn">Edit</button></td>
-                      <td><button className="btn" onClick={()=> deleteStudent(item.admission_no)}>Delete</button></td>
+                      <td><button className="btn" onClick={()=> deleteStaff(item.email)}>Delete</button></td>
                   </tr>
+           
                   )}
 
               </tbody>

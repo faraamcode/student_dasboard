@@ -5,13 +5,16 @@ const StaffContext = React.createContext()
 
 const StaffProvider = ({children})=>{
 
-    const [message, setMessage]= useState("")
+    const [message, setMessage]= useState(" message")
 
-const [studentDetails, setStudentDetails] = useState([])
+const [staffDetails, setStaffDetails] = useState([])
 const fetchStaff = ()=>{
     fetch(geturl)
     .then(result => result.json())
-    .then( resp => setStudentDetails(resp))
+    .then( resp => {
+        const real = resp.result
+        setStaffDetails(real)
+    })
     .catch(err => console.log(err))
 }
 
@@ -44,10 +47,10 @@ fetch(geturl,{
 }
 
 
-const deleteStudent = (data)=>{
+const deleteStaff = (data)=>{
     const formData = data
     const submitData = {
-        "admission_no": formData, 
+        "email": formData, 
         "authorization": token
         }
 fetch(`${geturl}/delete`,{
@@ -65,10 +68,14 @@ fetch(`${geturl}/delete`,{
 useEffect(()=>{
 
     fetchStaff() 
+}, [])
+useEffect(()=>{
+
+    fetchStaff() 
 }, [message])
 
 
-    return <StaffContext.Provider value ={{ message, studentDetails, createStaff, deleteStudent }}>{children}</StaffContext.Provider>
+    return <StaffContext.Provider value ={{ message, staffDetails, createStaff, deleteStaff }}>{children}</StaffContext.Provider>
 }
 
 
