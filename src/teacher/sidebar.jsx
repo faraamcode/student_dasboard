@@ -19,10 +19,21 @@ import Midtermcomment from './midtermcomment';
 import UpdateMidtermRecord from './updatemidtermrecord'
 import UpdatetermRecord from './updatetermrecord'
 
+import {ClassProvider} from '../admin/context/classContext'
+import {StudentProvider} from '../admin/context/studentContext'
+import {SubjectProvider} from '../admin/context/subjectContext'
+import {SubjectcombinationProvider} from '../admin/context/subjectcombinationContext'
+import {StaffProvider} from '../admin/context/staffContext'
+
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
+<ClassProvider>
+<StudentProvider>
+<SubjectProvider>
+<SubjectcombinationProvider>
+<StaffProvider>
     <div className="content">
       
 
@@ -117,8 +128,12 @@ const Sidebar = () => {
  <Route path="/record/update/term">
  <UpdatetermRecord/>
  </Route>
-  
-    </div>
+</div>
+ </StaffProvider>
+</SubjectcombinationProvider>
+</SubjectProvider>
+</StudentProvider>
+</ClassProvider>
   );
 };
 

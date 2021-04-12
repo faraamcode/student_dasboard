@@ -38,6 +38,22 @@ const fetchStudent = ()=>{
     .then( resp => setStudentDetails(resp))
     .catch(err => console.log(err))
 }
+const fetchStudentByClass = (class_id)=>{
+    const submitData ={
+        "class_id" : class_id
+    }
+
+    fetch(`${geturl}/class`, {
+        method : "post",
+        body: JSON.stringify(submitData),
+        headers :{
+            "content-type": "application/json"
+        } 
+    })
+    .then(result => result.json())
+    .then( resp => setStudentDetails(resp))
+    .catch(err => console.log(err))
+}
 
 const createStudent = (data)=>{
     const formData = data
@@ -146,7 +162,7 @@ useEffect(()=>{
 // }
 
 
-    return <StudentContext.Provider value ={{ message, studentDetails, createStudent, deleteStudent }}>{children}</StudentContext.Provider>
+    return <StudentContext.Provider value ={{ message, studentDetails, fetchStudentByClass, createStudent, deleteStudent }}>{children}</StudentContext.Provider>
 }
 
 
