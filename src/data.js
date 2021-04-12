@@ -103,7 +103,7 @@ export const Teacherlinks = [
     url: '/markrecord',
     text: 'Record',
     submenu: [
-      {url :"/record/midterm", text : "Mid Term"}, {url :"/record/term", text : "Term"}],
+      {url :"/record/midterm", text : "First Mid Term"}, {url :"/record/midterm2", text : "Second Mid Term"}, {url :"/record/term", text : "Term"}],
     icon: <FaBook />,
   },
   {

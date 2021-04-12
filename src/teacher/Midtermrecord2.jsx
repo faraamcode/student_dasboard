@@ -8,7 +8,7 @@ const Midtermrecord = () =>{
 
     const {classDetails} = UseClassContext()
     const {subjectDetails} = UseSubjectContext()
-    const {message, setUpdate, update, details,setDetails, handleChange1, handleChange2, handleChange3, handleClick} = UseResultContext()
+    const {message, setUpdate, update, details,setDetails, handleChange3, handleChange2,  handleClick2} = UseResultContext()
     const{fetchStudentByClass, studentDetails} = UseStudentContext()
 
     const handleFirstSubmit = (e)=>{
@@ -90,8 +90,7 @@ const Midtermrecord = () =>{
 
                   <th>S/N</th>
                   <th>Student Name</th>
-                  <th>Welcome Test(5)</th>
-                  <th>Assignment(5)</th>
+                  <th>Assignment(10)</th>
                   <th>Test(10)</th>
                   <th>Update</th>
                   </tr>
@@ -103,10 +102,9 @@ const Midtermrecord = () =>{
                       <tr key={item.id}>
                       <td>{item.id}</td>
                       <td>{`${item.last_name}  ${item.other_names}`}</td>
-                      <td><input name="test" type="number"  id=""  onChange={(e)=> handleChange1(e, item.admission_no)}/></td>
                       <td><input name="test" type="number"  id=""  onChange={(e)=> handleChange2(e, item.admission_no)}/></td>
                       <td><input name="test" type="number"  id=""  onChange={(e)=> handleChange3(e, item.admission_no)}/></td>
-                      <td><button className="btn" onClick={(e)=>handleClick(e, item.admission_no)}>Updade</button></td>
+                      <td><button className="btn" onClick={(e)=>handleClick2(e, item.admission_no)}>Updade</button></td>
                   </tr>
                    )}
                   )}

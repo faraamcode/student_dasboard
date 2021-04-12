@@ -13,6 +13,7 @@ import Psycomotor from './psycomotor';
 import Affective from './affective';
 import Attendance from './Attendance';
 import Midtermrecord from './Midtermrecord';
+import Midtermrecord2 from './Midtermrecord2';
 import Termrecord from './termrecord';
 import Termcomment from './termcomment'
 import Midtermcomment from './midtermcomment';
@@ -24,6 +25,7 @@ import {StudentProvider} from '../admin/context/studentContext'
 import {SubjectProvider} from '../admin/context/subjectContext'
 import {SubjectcombinationProvider} from '../admin/context/subjectcombinationContext'
 import {StaffProvider} from '../admin/context/staffContext'
+import {ResultProvider} from './context/result.context'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -34,6 +36,7 @@ const Sidebar = () => {
 <SubjectProvider>
 <SubjectcombinationProvider>
 <StaffProvider>
+  <ResultProvider>
     <div className="content">
       
 
@@ -107,6 +110,9 @@ const Sidebar = () => {
  </Route>
  <Route path="/record/midterm">
  <Midtermrecord/>
+ </Route>
+ <Route path="/record/midterm2">
+ <Midtermrecord2/>
 
  </Route>
  <Route path="/record/term">
@@ -129,6 +135,7 @@ const Sidebar = () => {
  <UpdatetermRecord/>
  </Route>
 </div>
+</ResultProvider>
  </StaffProvider>
 </SubjectcombinationProvider>
 </SubjectProvider>
