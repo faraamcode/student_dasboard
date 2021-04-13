@@ -22,7 +22,7 @@ const Midtermrecord = () =>{
  return(
      <div className="form-container">
         <div className="form-header">
-         <h5> Mid term Record</h5>
+         <h5> Second Mid Term Record</h5>
         </div>
         <div className="main-form">
          <form action="" className="form teacher-result" onSubmit={handleFirstSubmit}>
