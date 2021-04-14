@@ -107,14 +107,6 @@ export const Teacherlinks = [
     icon: <FaBook />,
   },
   {
-    id: 4,
-    url: '/updatekrecord',
-    text: 'Update Record',
-    submenu: [
-      {url :"/record/update/midterm", text : "Mid Term"}, {url :"/record/update/term", text : "Term"}],
-    icon: <FiEdit2 />,
-  },
-  {
     id: 5,
     url: '/psycomotor',
     text: 'Psycomotor',

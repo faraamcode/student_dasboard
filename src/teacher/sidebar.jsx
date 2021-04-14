@@ -26,6 +26,7 @@ import {SubjectProvider} from '../admin/context/subjectContext'
 import {SubjectcombinationProvider} from '../admin/context/subjectcombinationContext'
 import {StaffProvider} from '../admin/context/staffContext'
 import {ResultProvider} from './context/result.context'
+import {CommentProvider} from './context/comment.context'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -37,6 +38,7 @@ const Sidebar = () => {
 <SubjectcombinationProvider>
 <StaffProvider>
   <ResultProvider>
+  <CommentProvider>
     <div className="content">
       
 
@@ -48,8 +50,8 @@ const Sidebar = () => {
           const { id, url, text, icon, submenu } = link;
           if(submenu.length == 0){
             return (
-                <Link to={url} >
-                <li key={id} >
+                <Link to={url} key={id}>
+                <li  >
                  
                     {icon}
                     {text}
@@ -59,8 +61,8 @@ const Sidebar = () => {
               );
           }
           return (
-            <Link >
-            <li key={id} >
+            <div key={id}>
+            <li>
              
                 {icon}
                 {text}
@@ -69,11 +71,11 @@ const Sidebar = () => {
             <div>
              <ul className="submenu show"> 
                  {submenu.map((item, index)=> {
-                     return <Link to={item.url}><li>{item.text}</li></Link>
+                     return <Link to={item.url} key={index}><li>{item.text}</li></Link>
                     })}
              </ul>
              </div>
-            </Link>
+            </div>
           );
         })}
       </ul>
@@ -135,6 +137,7 @@ const Sidebar = () => {
  <UpdatetermRecord/>
  </Route>
 </div>
+</CommentProvider>
 </ResultProvider>
  </StaffProvider>
 </SubjectcombinationProvider>

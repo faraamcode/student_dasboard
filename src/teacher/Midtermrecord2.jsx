@@ -5,7 +5,6 @@ import {UseSubjectContext} from '../admin/context/subjectContext'
 import {UseStudentContext} from '../admin/context/studentContext'
 import {UseResultContext} from './context/result.context'
 const Midtermrecord = () =>{
-
     const {classDetails} = UseClassContext()
     const {subjectDetails} = UseSubjectContext()
     const {message, setUpdate, update, details,setDetails, handleChange3, handleChange2,  handleClick2} = UseResultContext()
@@ -34,7 +33,7 @@ const Midtermrecord = () =>{
                     </option>
                     {
                         classDetails.map((item)=> 
-                        <option value={item.id}>{item.class_name}</option>
+                        <option value={item.id} key={item.id}>{item.class_name}</option>
                         )
                     }
                 </select>
@@ -47,7 +46,7 @@ const Midtermrecord = () =>{
                     </option>
                     {
                         subjectDetails.map((item)=> 
-                        <option value={item.id}>{item.subject_name}</option>
+                        <option value={item.id} key={item.id}>{item.subject_name}</option>
                         )
                     }
                 </select>
@@ -73,7 +72,7 @@ const Midtermrecord = () =>{
                     <option value="third">Third</option>
                 </select>
             </div>
-            <button type="submit" class="submit-btn"><FaBook className="btn-icon"/>submit</button>
+            <button type="submit" className="submit-btn"><FaBook className="btn-icon"/>submit</button>
          </form>
         </div>
      </div>
