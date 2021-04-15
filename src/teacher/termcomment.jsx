@@ -22,6 +22,7 @@ const Termcomment = () =>{
         <div className="form-header">
          <h5> Term Comment</h5>
         </div>
+      <div className="message">{message}</div>
         <div className="main-form">
          <form action="" className="form teacher-result" onSubmit ={handleSubmit}>
             <div className="form-control">

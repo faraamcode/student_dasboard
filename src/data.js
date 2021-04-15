@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FaBehance,
   FaFacebook,
@@ -13,43 +13,43 @@ import {
   FaBook,
   FaGift,
   FaIdCard,
-} from 'react-icons/fa';
-import {SiGoogleclassroom} from 'react-icons/si'
-import {GiCombinationLock} from 'react-icons/gi'
-import {MdSubject} from 'react-icons/md'
-import {FiFileText, FiEdit2} from 'react-icons/fi'
-import {RiBillFill, RiSecurePaymentLine} from 'react-icons/ri'
-import {submenufunction, SidebarContext} from './context/sideBarcontext'
-const {openClassfunction} = React.createContext(SidebarContext)
+} from "react-icons/fa";
+import { SiGoogleclassroom } from "react-icons/si";
+import { GiCombinationLock } from "react-icons/gi";
+import { MdSubject } from "react-icons/md";
+import { FiFileText, FiEdit2 } from "react-icons/fi";
+import { RiBillFill, RiSecurePaymentLine } from "react-icons/ri";
+import { submenufunction, SidebarContext } from "./context/sideBarcontext";
+const { openClassfunction } = React.createContext(SidebarContext);
 export const links = [
   {
     id: 1,
-    url: '/',
-    text: 'dashoboad',
+    url: "/",
+    text: "dashoboad",
     icon: <FaHome />,
   },
   {
     id: 2,
-    url: '/',
-    text: 'profile',
-    icon: <FaUserTie/>,
+    url: "/",
+    text: "profile",
+    icon: <FaUserTie />,
   },
   {
     id: 3,
-    url: '/result',
-    text: 'result',
+    url: "/result",
+    text: "result",
     icon: <FiFileText />,
   },
   {
     id: 4,
-    url: '/payment',
-    text: 'payment',
+    url: "/payment",
+    text: "payment",
     icon: <RiSecurePaymentLine />,
   },
   {
     id: 5,
-    url: '/bill',
-    text: 'current bill',
+    url: "/bill",
+    text: "current bill",
     icon: <RiBillFill />,
   },
 ];
@@ -57,27 +57,27 @@ export const links = [
 export const social = [
   {
     id: 1,
-    url: 'https://www.twitter.com',
+    url: "https://www.twitter.com",
     icon: <FaFacebook />,
   },
   {
     id: 2,
-    url: 'https://www.twitter.com',
+    url: "https://www.twitter.com",
     icon: <FaTwitter />,
   },
   {
     id: 3,
-    url: 'https://www.twitter.com',
+    url: "https://www.twitter.com",
     icon: <FaLinkedin />,
   },
   {
     id: 4,
-    url: 'https://www.twitter.com',
+    url: "https://www.twitter.com",
     icon: <FaBehance />,
   },
   {
     id: 5,
-    url: 'https://www.twitter.com',
+    url: "https://www.twitter.com",
     icon: <FaSketch />,
   },
 ];
@@ -85,176 +85,198 @@ export const social = [
 export const Teacherlinks = [
   {
     id: 1,
-    url: '/',
-    text: 'dashoboad',
+    url: "/",
+    text: "dashoboad",
     submenu: [],
     icon: <FaHome />,
   },
   {
     id: 2,
-    url: '/result',
-    text: 'result',
+    url: "/result",
+    text: "result",
     submenu: [
-      {url :"/result/student", text : "student"}, {url :"/result/class", text : "Class"}, {url :"/result/subject", text : "Subject"}, {url :"/result/midterm", text : "Mid term"} ], 
+      { url: "/result/student", text: "student" },
+      { url: "/result/class", text: "Class" },
+      { url: "/result/subject", text: "Subject" },
+      { url: "/result/midterm", text: "Mid term" },
+    ],
     icon: <FiFileText />,
   },
   {
     id: 3,
-    url: '/markrecord',
-    text: 'Record',
+    url: "/markrecord",
+    text: "Record",
     submenu: [
-      {url :"/record/midterm", text : "First Mid Term"}, {url :"/record/midterm2", text : "Second Mid Term"}, {url :"/record/term", text : "Term"}],
+      { url: "/record/midterm", text: "First Mid Term" },
+      { url: "/record/midterm2", text: "Second Mid Term" },
+      { url: "/record/term", text: "Term" },
+    ],
     icon: <FaBook />,
   },
   {
     id: 5,
-    url: '/psycomotor',
-    text: 'Psycomotor',
-    submenu : [],
+    url: "/psycomotor",
+    text: "Psycomotor",
+    submenu: [],
     icon: <RiSecurePaymentLine />,
   },
   {
     id: 6,
-    url: '/Comment',
-    text: 'Comment',
-    submenu: [
-      {url :"/comment/midterm", text : "Mid Term"}, {url :"/comment/term", text : "Term"} ],
+    url: "/comment/term",
+    text: "Comment",
+    submenu: [],
     icon: <FaGift />,
   },
   {
     id: 7,
-    url: '/affective',
-    text: 'Affective Domain',
+    url: "/affective",
+    text: "Affective Domain",
     submenu: [],
     icon: <RiBillFill />,
   },
   {
     id: 8,
-    url: '/attendance',
-    text: 'Attendance',
+    url: "/attendance",
+    text: "Attendance",
     submenu: [],
-    icon: < FaIdCard/>,
+    icon: <FaIdCard />,
   },
 ];
 export const Adminlinks = [
-  { menu :openClassfunction,
+  {
+    menu: openClassfunction,
     id: 9,
-    url: '/Class',
-    text: 'Class',
+    url: "/Class",
+    text: "Class",
     submenu: [
-      {url :"/class/create", text : "Create"}, {url :"/class/view", text : "View"} ],
-      icon: <SiGoogleclassroom />,
-    },
-    {
-      menu :openClassfunction,
-      id: 15,
-      url: '/Student',
-      text: 'Student',
-      submenu: [
-        {url :"/student/create", text : "Create"}, {url :"/student/view", text : "View"} ],
-      icon: <FaUserTie />,
-    },
-  {
-    menu :openClassfunction,
-    id: 10,
-    url: '/Subject',
-    text: 'Subject',
-    submenu: [
-      {url :"/subject/create", text : "Create"}, {url :"/subject/view", text : "View"} ],
-    icon: <MdSubject />,
+      { url: "/class/create", text: "Create" },
+      { url: "/class/view", text: "View" },
+    ],
+    icon: <SiGoogleclassroom />,
   },
   {
-    menu :openClassfunction,
-    id: 11,
-    url: '/subjectcombination',
-    text: 'Subject Combination',
+    menu: openClassfunction,
+    id: 15,
+    url: "/Student",
+    text: "Student",
     submenu: [
-      {url :"/subjectcombination/create", text : "Create"}, {url :"/subjectcombination/view", text : "View"} ],
-    icon: <GiCombinationLock />,
-  },
-  {
-    menu :openClassfunction,
-    id: 12,
-    url: '/staff',
-    text: 'Staff',
-    submenu: [
-      {url :"/staff/create", text : "Create"}, {url :"/staff/view", text : "View"} ],
+      { url: "/student/create", text: "Create" },
+      { url: "/student/view", text: "View" },
+    ],
     icon: <FaUserTie />,
   },
   {
-    
+    menu: openClassfunction,
+    id: 10,
+    url: "/Subject",
+    text: "Subject",
+    submenu: [
+      { url: "/subject/create", text: "Create" },
+      { url: "/subject/view", text: "View" },
+    ],
+    icon: <MdSubject />,
+  },
+  {
+    menu: openClassfunction,
+    id: 11,
+    url: "/subjectcombination",
+    text: "Subject Combination",
+    submenu: [
+      { url: "/subjectcombination/create", text: "Create" },
+      { url: "/subjectcombination/view", text: "View" },
+    ],
+    icon: <GiCombinationLock />,
+  },
+  {
+    menu: openClassfunction,
+    id: 12,
+    url: "/staff",
+    text: "Staff",
+    submenu: [
+      { url: "/staff/create", text: "Create" },
+      { url: "/staff/view", text: "View" },
+    ],
+    icon: <FaUserTie />,
+  },
+  {
     id: 13,
-    url: '/progress',
-    text: 'spreadsheet',
+    url: "/progress",
+    text: "spreadsheet",
     submenu: [],
     icon: <FaGift />,
   },
   {
-    menu :openClassfunction,
+    menu: openClassfunction,
     id: 2,
-    url: '/result',
-    text: 'result',
+    url: "/result",
+    text: "result",
     submenu: [
-      {url :"/result/student", text : "student"}, {url :"/result/class", text : "Class"}, {url :"/result/subject", text : "Subject"}, {url :"/result/midterm", text : "Mid term"} ], 
+      { url: "/result/student", text: "student" },
+      { url: "/result/class", text: "Class" },
+      { url: "/result/subject", text: "Subject" },
+      { url: "/result/midterm", text: "Mid term" },
+    ],
     icon: <FiFileText />,
   },
   {
- 
     id: 14,
-    url: '/progress',
-    text: 'Progress',
+    url: "/progress",
+    text: "Progress",
     submenu: [],
-      icon: <FaGift />,
-    },
-  {
-    menu :openClassfunction,
-    id: 3,
-    url: '/markrecord',
-    text: 'Record',
-    submenu: [
-      {url :"/record/midterm", text : "Mid Term"}, {url :"/record/term", text : "Term"}],
-    icon: <FaBook />,
-  },
-  {
-    menu : openClassfunction,
-    id: 4,
-    url: '/updatekrecord',
-    text: 'Update Record',
-    submenu: [
-      {url :"/record/update/midterm", text : "Mid Term"}, {url :"/record/update/term", text : "Term"}],
-    icon: <FiEdit2 />,
-  },
-  {
- 
-    id: 5,
-    url: '/psycomotor',
-    text: 'Psycomotor',
-    submenu : [],
-    icon: <RiSecurePaymentLine />,
-  },
-  {
-    menu :openClassfunction,
-    id: 6,
-    url: '/Comment',
-    text: 'Comment',
-    submenu: [
-      {url :"/comment/midterm", text : "Mid Term"}, {url :"/comment/term", text : "Term"} ],
     icon: <FaGift />,
   },
   {
-
+    menu: openClassfunction,
+    id: 3,
+    url: "/markrecord",
+    text: "Record",
+    submenu: [
+      { url: "/record/midterm", text: "Mid Term" },
+      { url: "/record/term", text: "Term" },
+    ],
+    icon: <FaBook />,
+  },
+  {
+    menu: openClassfunction,
+    id: 4,
+    url: "/updatekrecord",
+    text: "Update Record",
+    submenu: [
+      { url: "/record/update/midterm", text: "Mid Term" },
+      { url: "/record/update/term", text: "Term" },
+    ],
+    icon: <FiEdit2 />,
+  },
+  {
+    id: 5,
+    url: "/psycomotor",
+    text: "Psycomotor",
+    submenu: [],
+    icon: <RiSecurePaymentLine />,
+  },
+  {
+    menu: openClassfunction,
+    id: 6,
+    url: "/Comment",
+    text: "Comment",
+    submenu: [
+      { url: "/comment/midterm", text: "Mid Term" },
+      { url: "/comment/term", text: "Term" },
+    ],
+    icon: <FaGift />,
+  },
+  {
     id: 7,
-    url: '/affective',
-    text: 'Affective Domain',
+    url: "/affective",
+    text: "Affective Domain",
     submenu: [],
     icon: <RiBillFill />,
   },
   {
-
     id: 8,
-    url: '/attendance',
-    text: 'Attendance',
+    url: "/attendance",
+    text: "Attendance",
     submenu: [],
-    icon: < FaIdCard/>,
+    icon: <FaIdCard />,
   },
 ];

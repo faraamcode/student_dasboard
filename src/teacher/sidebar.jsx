@@ -27,6 +27,7 @@ import {SubjectcombinationProvider} from '../admin/context/subjectcombinationCon
 import {StaffProvider} from '../admin/context/staffContext'
 import {ResultProvider} from './context/result.context'
 import {CommentProvider} from './context/comment.context'
+import {PsycomotorProvider} from './context/psycomotor.context'
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
@@ -39,6 +40,7 @@ const Sidebar = () => {
 <StaffProvider>
   <ResultProvider>
   <CommentProvider>
+  <PsycomotorProvider>
     <div className="content">
       
 
@@ -61,7 +63,7 @@ const Sidebar = () => {
               );
           }
           return (
-            <div key={id}>
+            <Link key={id}>
             <li>
              
                 {icon}
@@ -75,7 +77,7 @@ const Sidebar = () => {
                     })}
              </ul>
              </div>
-            </div>
+            </Link>
           );
         })}
       </ul>
@@ -100,8 +102,8 @@ const Sidebar = () => {
  </Route>
  <Route path="/psycomotor">
  <Psycomotor/>
-
  </Route>
+ 
  <Route path="/affective">
  <Affective/>
 
@@ -123,8 +125,8 @@ const Sidebar = () => {
  </Route>
  <Route path="/comment/term" >
     <Termcomment/>
-
-    </Route>
+ </Route>
+ 
     <Route path="/comment/midterm" >
     <Midtermcomment/>
 
@@ -137,6 +139,7 @@ const Sidebar = () => {
  <UpdatetermRecord/>
  </Route>
 </div>
+</PsycomotorProvider>
 </CommentProvider>
 </ResultProvider>
  </StaffProvider>
