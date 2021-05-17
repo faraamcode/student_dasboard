@@ -1,36 +1,21 @@
 import React from "react";
 import { FaBook } from "react-icons/fa";
-import axios from "axios";
-import { saveAs } from "file-saver";
+import { UseClassContext } from "../admin/context/classContext";
+import { UseStudentContext } from "../admin/context/studentContext";
+import { UseResultsContext } from "./context/results.context";
 
 const ResultForm = () => {
-  const createAndDownloadPdf = (e) => {
+  const { classDetails } = UseClassContext();
+  const { fetchStudentByClass, studentDetails } = UseStudentContext();
+  const { message, handleSubmit, handleChangeMain, setResult } =
+    UseResultsContext();
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setResult((previousState) => ({ ...previousState, [name]: value }));
     e.preventDefault();
-    // axios
-    //   .post("http://localhost:3000/create-pdf")
-    //   .then(() =>
-    //     axios.get("http://localhost:3000/fetch-pdf", { responseType: "blob" })
-    //   )
-    //   .then((res) => {
-    //     console.log("hii");
-    //     const pdfBlob = new Blob([res.data], { type: "application/pdf" });
-
-    //     saveAs(pdfBlob, "newPdf.pdf");
-    //   });
-    // console.log("you clicked me");
-
-    fetch("http://localhost:3000/create-pdf", {
-      method: "post",
-    }).then((result) => {
-      if (result) {
-        saveAs("http://localhost:3000/result.pdf", "newPdf.pdf");
-      }
-    });
-    //   console.log(result);
-    //   const pdfBlob = new Blob([res.data], { type: "application/pdf" });
-
-    // then((res) => {
-    // });
+    fetchStudentByClass(value);
   };
 
   return (
@@ -39,41 +24,48 @@ const ResultForm = () => {
         <h5> Student result</h5>
       </div>
       <div className="main-form">
-        <form action="" className="form teacher-result">
+        <form action="" className="form teacher-result" onSubmit={handleSubmit}>
           <div className="form-control">
             <label htmlFor="">Class</label>
-            <select name="session" id="">
-              <option value="">----select a session---</option>
+            <select name="class" id="" onChange={handleChange}>
+              <option value="">----select a class---</option>
+              {classDetails.map((item) => (
+                <option value={item.id}>{item.class_name}</option>
+              ))}
             </select>
           </div>
           <div className="form-control">
             <label htmlFor="">Student</label>
-            <select name="session" id="">
-              <option value="">----select a term---</option>
-              <option value="">First</option>
-              <option value="">Second</option>
+            <select name="student" id="" onChange={handleChangeMain}>
+              <option value="">----select a student---</option>
+              {studentDetails.map((item) => (
+                <option
+                  value={item.admission_no}
+                >{`${item.last_name}  ${item.other_names}`}</option>
+              ))}
             </select>
           </div>
           <div className="form-control">
             <label htmlFor="">Session</label>
-            <select name="session" id="">
-              <option value="">----select a term---</option>
-              <option value="">First</option>
-              <option value="">Second</option>
+            <select name="session" id="" onChange={handleChangeMain}>
+              <option value="">----select a session---</option>
+              <option value="20/20">20/20</option>
+              <option value="20/21">20/21</option>
             </select>
           </div>
           <div className="form-control">
             <label htmlFor="">Term</label>
-            <select name="session" id="">
+            <select name="term" id="" onChange={handleChangeMain}>
               <option value="">----select a term---</option>
-              <option value="">First</option>
-              <option value="">Second</option>
+              <option value="first">First</option>
+              <option value="second">Second</option>
+              <option value="third">Third</option>
             </select>
           </div>
 
-          <button type="button" class="submit-btn">
-            <FaBook className="btn-icon" onClick={createAndDownloadPdf} />
-            download
+          <button type="submit" class="submit-btn">
+            <FaBook className="btn-icon" />
+            View
           </button>
         </form>
       </div>

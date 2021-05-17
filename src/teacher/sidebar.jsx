@@ -26,6 +26,7 @@ import { SubjectProvider } from "../admin/context/subjectContext";
 import { SubjectcombinationProvider } from "../admin/context/subjectcombinationContext";
 import { StaffProvider } from "../admin/context/staffContext";
 import { ResultProvider } from "./context/result.context";
+import { ResultsProvider } from "./context/results.context";
 import { CommentProvider } from "./context/comment.context";
 import { PsycomotorProvider } from "./context/psycomotor.context";
 import { AffectiveProvider } from "./context/affective.context";
@@ -35,114 +36,118 @@ const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
   return (
-    <AttendanceProvider>
-      <AffectiveProvider>
-        <ClassProvider>
-          <StudentProvider>
-            <SubjectProvider>
-              <SubjectcombinationProvider>
-                <StaffProvider>
-                  <ResultProvider>
-                    <CommentProvider>
-                      <PsycomotorProvider>
-                        <div className="content">
-                          <aside
-                            className={`${
-                              isSidebarOpen ? "sidebar show-sidebar" : "sidebar"
-                            }`}
-                          >
-                            <ul className="links teacher-link">
-                              {Teacherlinks.map((link) => {
-                                const { id, url, text, icon, submenu } = link;
-                                if (submenu.length == 0) {
+    <ResultProvider>
+      <ResultsProvider>
+        <AttendanceProvider>
+          <AffectiveProvider>
+            <ClassProvider>
+              <StudentProvider>
+                <SubjectProvider>
+                  <SubjectcombinationProvider>
+                    <StaffProvider>
+                      <CommentProvider>
+                        <PsycomotorProvider>
+                          <div className="content">
+                            <aside
+                              className={`${
+                                isSidebarOpen
+                                  ? "sidebar show-sidebar"
+                                  : "sidebar"
+                              }`}
+                            >
+                              <ul className="links teacher-link">
+                                {Teacherlinks.map((link) => {
+                                  const { id, url, text, icon, submenu } = link;
+                                  if (submenu.length == 0) {
+                                    return (
+                                      <Link to={url} key={id}>
+                                        <li>
+                                          {icon}
+                                          {text}
+                                        </li>
+                                      </Link>
+                                    );
+                                  }
                                   return (
-                                    <Link to={url} key={id}>
+                                    <Link key={id}>
                                       <li>
                                         {icon}
                                         {text}
+                                        <IoIosArrowDown className="arrow" />
                                       </li>
+                                      <div>
+                                        <ul className="submenu show">
+                                          {submenu.map((item, index) => {
+                                            return (
+                                              <Link to={item.url} key={index}>
+                                                <li>{item.text}</li>
+                                              </Link>
+                                            );
+                                          })}
+                                        </ul>
+                                      </div>
                                     </Link>
                                   );
-                                }
-                                return (
-                                  <Link key={id}>
-                                    <li>
-                                      {icon}
-                                      {text}
-                                      <IoIosArrowDown className="arrow" />
-                                    </li>
-                                    <div>
-                                      <ul className="submenu show">
-                                        {submenu.map((item, index) => {
-                                          return (
-                                            <Link to={item.url} key={index}>
-                                              <li>{item.text}</li>
-                                            </Link>
-                                          );
-                                        })}
-                                      </ul>
-                                    </div>
-                                  </Link>
-                                );
-                              })}
-                            </ul>
-                          </aside>
+                                })}
+                              </ul>
+                            </aside>
 
-                          <Route path="/result/student" exact>
-                            <Result />
-                          </Route>
-                          <Route path="/result/class">
-                            <Classresult />
-                          </Route>
-                          <Route path="/result/subject">
-                            <Subjectresult />
-                          </Route>
-                          <Route path="/result/midterm">
-                            <MidtermResult />
-                          </Route>
-                          <Route path="/psycomotor">
-                            <Psycomotor />
-                          </Route>
+                            <Route path="/result/student" exact>
+                              <Result />
+                            </Route>
+                            <Route path="/result/class">
+                              <Classresult />
+                            </Route>
+                            <Route path="/result/subject">
+                              <Subjectresult />
+                            </Route>
+                            <Route path="/result/midterm">
+                              <MidtermResult />
+                            </Route>
+                            <Route path="/psycomotor">
+                              <Psycomotor />
+                            </Route>
 
-                          <Route path="/affective">
-                            <Affective />
-                          </Route>
-                          <Route path="/attendance">
-                            <Attendance />
-                          </Route>
-                          <Route path="/record/midterm">
-                            <Midtermrecord />
-                          </Route>
-                          <Route path="/record/midterm2">
-                            <Midtermrecord2 />
-                          </Route>
-                          <Route path="/record/term">
-                            <Termrecord />
-                          </Route>
-                          <Route path="/comment/term">
-                            <Termcomment />
-                          </Route>
+                            <Route path="/affective">
+                              <Affective />
+                            </Route>
+                            <Route path="/attendance">
+                              <Attendance />
+                            </Route>
+                            <Route path="/record/midterm">
+                              <Midtermrecord />
+                            </Route>
+                            <Route path="/record/midterm2">
+                              <Midtermrecord2 />
+                            </Route>
+                            <Route path="/record/term">
+                              <Termrecord />
+                            </Route>
+                            <Route path="/comment/term">
+                              <Termcomment />
+                            </Route>
 
-                          <Route path="/comment/midterm">
-                            <Midtermcomment />
-                          </Route>
-                          <Route path="/record/update/midterm">
-                            <UpdateMidtermRecord />
-                          </Route>
-                          <Route path="/record/update/term">
-                            <UpdatetermRecord />
-                          </Route>
-                        </div>
-                      </PsycomotorProvider>
-                    </CommentProvider>
-                  </ResultProvider>
-                </StaffProvider>
-              </SubjectcombinationProvider>
-            </SubjectProvider>
-          </StudentProvider>
-        </ClassProvider>
-      </AffectiveProvider>
-    </AttendanceProvider>
+                            <Route path="/comment/midterm">
+                              <Midtermcomment />
+                            </Route>
+                            <Route path="/record/update/midterm">
+                              <UpdateMidtermRecord />
+                            </Route>
+                            <Route path="/record/update/term">
+                              <UpdatetermRecord />
+                            </Route>
+                          </div>
+                        </PsycomotorProvider>
+                      </CommentProvider>
+                    </StaffProvider>
+                  </SubjectcombinationProvider>
+                </SubjectProvider>
+              </StudentProvider>
+            </ClassProvider>
+          </AffectiveProvider>
+        </AttendanceProvider>
+      </ResultsProvider>
+    </ResultProvider>
   );
 };
 
