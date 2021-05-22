@@ -5,10 +5,13 @@ const ResultsContext = React.createContext();
 const ResultsProvider = ({ children }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [download, setDownload] = useState(false);
+  const [info, setInfo] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(affective);
     const { student, session, term } = result;
+    setDownload(true);
 
     const submitData = {
       admission_no: student,
@@ -26,7 +29,13 @@ const ResultsProvider = ({ children }) => {
       },
     })
       .then((resp) => resp.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        // data.result ? console.log(data.result.url) : "no result";
+        if (data.result) {
+          setInfo(data.result.url);
+          setLoading(true);
+        }
+      });
   };
   const handleChangeMain = (e) => {
     const name = e.target.name;
@@ -37,7 +46,15 @@ const ResultsProvider = ({ children }) => {
 
   return (
     <ResultsContext.Provider
-      value={{ message, handleSubmit, handleChangeMain, setResult }}
+      value={{
+        message,
+        handleSubmit,
+        handleChangeMain,
+        setResult,
+        info,
+        loading,
+        download,
+      }}
     >
       {children}
     </ResultsContext.Provider>

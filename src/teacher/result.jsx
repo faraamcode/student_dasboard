@@ -3,12 +3,21 @@ import { FaBook } from "react-icons/fa";
 import { UseClassContext } from "../admin/context/classContext";
 import { UseStudentContext } from "../admin/context/studentContext";
 import { UseResultsContext } from "./context/results.context";
+import Pdf from "react-to-pdf";
+import { Link } from "react-router-dom";
 
 const ResultForm = () => {
   const { classDetails } = UseClassContext();
   const { fetchStudentByClass, studentDetails } = UseStudentContext();
-  const { message, handleSubmit, handleChangeMain, setResult } =
-    UseResultsContext();
+  const {
+    message,
+    handleSubmit,
+    handleChangeMain,
+    setResult,
+    info,
+    loading,
+    download,
+  } = UseResultsContext();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -18,6 +27,7 @@ const ResultForm = () => {
     fetchStudentByClass(value);
   };
 
+  const ref = React.createRef();
   return (
     <div className="form-container">
       <div className="form-header">
@@ -69,6 +79,11 @@ const ResultForm = () => {
           </button>
         </form>
       </div>
+      {download && (
+        <a href={info} target="_blank">
+          {!loading ? "fetching...." : "download result"}
+        </a>
+      )}
     </div>
   );
 };
