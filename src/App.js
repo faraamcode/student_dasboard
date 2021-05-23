@@ -18,9 +18,9 @@ function App() {
               <Home />
               <Modal />
               {/* <StudentSidebar /> */}
-              <TeacherSidebar />
+              {/* <TeacherSidebar /> */}
 
-              {/* <AdminSidebar/> */}
+              <AdminSidebar />
             </Router>
           </MenuProvider>
         </ClassProvider>

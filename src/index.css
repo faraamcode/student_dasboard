@@ -904,3 +904,10 @@ td {
 .special-row {
   border: 0;
 }
+.previe-image {
+  width: 10rem;
+  height: 12rem;
+  /* border-radius: 50%; */
+  border: 5px solid var(--clr-white);
+  /* object-fit: cover; */
+}
